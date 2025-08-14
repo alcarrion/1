@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colores del Mundo — Paletas y Curiosidades</title>
+  <meta name="description" content="Explora cuántos colores existen, genera paletas y aprende curiosidades del color.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <div class="logo">🎨</div>
+      <div>
+        <strong>Colores del Mundo</strong>
+        <div class="subtitle">Paletas · Curiosidades · Convertidor</div>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="#paletas">Paletas</a>
+      <a href="#curiosidades">Curiosidades</a>
+      <a href="#convertidor">Convertidor</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Colores del Mundo</h1>
+        <p class="lead">¿Cuántos colores existen? Más de los que imaginas. En pantallas solemos hablar de <b>16.7 millones</b> (RGB 24‑bit), pero el ojo humano distingue aún más matices. Aquí puedes <b>generar paletas</b>, <b>copiar códigos</b> y aprender datos curiosos.</p>
+        <div class="cta">
+          <a class="btn primary" href="#paletas">Generar paleta</a>
+          <a class="btn" href="#convertidor">Abrir convertidor</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="blob b3"></div>
+      </div>
+    </section>
+
+    <section id="paletas" class="card">
+      <header class="card-header">
+        <h2>Generador de paletas</h2>
+        <div class="actions">
+          <button id="btn-new" class="btn primary">Nueva paleta (barra espaciadora)</button>
+          <label class="lock-tip"><input type="checkbox" id="lock-first"> Bloquear 1er color</label>
+        </div>
+      </header>
+      <div id="palette" class="palette" role="list" aria-label="Paleta de colores">
+        <!-- Colores generados por JS -->
+      </div>
+      <div class="note">Click en un color para copiar su <code>#HEX</code>. Usa la barra espaciadora para generar otra paleta.</div>
+    </section>
+
+    <section id="curiosidades" class="grid">
+      <article class="tile card">
+        <h3>¿Cuántos colores hay?</h3>
+        <p>En RGB de 8 bits por canal hay <b>256×256×256 = 16,777,216</b> posibles colores. En impresión (CMYK) la gama es distinta, y el ojo humano puede diferenciar todavía más tonos gracias a la iluminación y el contexto.</p>
+      </article>
+      <article class="tile card">
+        <h3>Temperatura de color</h3>
+        <p>La luz tiene “temperatura” medida en Kelvin: cálida (~2700K) tiende a amarillos/rojos, fría (~6500K) a azules. Esto cambia cómo percibimos los mismos píxeles.</p>
+      </article>
+      <article class="tile card">
+        <h3>Accesibilidad</h3>
+        <p>El contraste entre texto y fondo es clave. Intenta mantener una relación de <b>al menos 4.5:1</b> para textos normales. Abajo puedes comprobar el contraste de tu paleta.</p>
+      </article>
+    </section>
+
+    <section id="convertidor" class="card">
+      <header class="card-header">
+        <h2>Convertidor y contraste</h2>
+      </header>
+      <div class="convert-grid">
+        <div>
+          <label>HEX</label>
+          <input id="hex" type="text" placeholder="#3A86FF" value="#3A86FF" />
+        </div>
+        <div>
+          <label>RGB</label>
+          <input id="rgb" type="text" placeholder="58, 134, 255" />
+        </div>
+        <div>
+          <label>Preview</label>
+          <div id="preview" class="preview"></div>
+        </div>
+      </div>
+      <div class="contrast">
+        <label>Color de texto</label>
+        <div class="radio">
+          <label><input type="radio" name="textc" value="black" checked> Negro</label>
+          <label><input type="radio" name="textc" value="white"> Blanco</label>
+        </div>
+        <div id="ratio" class="ratio">Contraste: —</div>
+      </div>
+    </section>
+
+    <section id="faq" class="card">
+      <header class="card-header">
+        <h2>FAQ</h2>
+      </header>
+      <details>
+        <summary>¿Cómo copio un color?</summary>
+        <p>Haz click sobre el bloque de color. Se copiará su código HEX al portapapeles.</p>
+      </details>
+      <details>
+        <summary>¿Puedo fijar un color y cambiar los demás?</summary>
+        <p>Sí. Marca “Bloquear 1er color” y el generador mantendrá el primer tono fijo.</p>
+      </details>
+      <details>
+        <summary>¿Qué es el contraste 4.5:1?</summary>
+        <p>Es una recomendación de accesibilidad (WCAG) para que el texto sea legible sobre un fondo.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>Hecho con ♥ para explorar colores</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
