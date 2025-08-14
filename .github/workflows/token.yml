@@ -12,13 +12,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.ONE }}
+          token: ${{ secrets.ONE }}  # tu token guardado como secreto
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.ONE }}
           publish_dir: .
-
-      - name: Confirmar estado
-        run: echo "✅ Deploy completado correctamente - Estado: 200 OK"
+          quiet: true
