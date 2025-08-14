@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Cambia si usas otra rama
+      - main
 
 jobs:
   deploy:
@@ -12,15 +12,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.ONE }}  # Tu token personal guardado como secreto
+          token: ${{ secrets.ONE }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.ONE }}
           publish_dir: .
-          quiet: true  # Oculta detalles largos del log
 
       - name: Confirmar estado
-        run: |
-          echo "✅ Deploy completado correctamente - Estado: 200 OK"
+        run: echo "✅ Deploy completado correctamente - Estado: 200 OK"
